@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+nav {
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 10vh;
+	padding: 0 1.5em;
+	background-color: #111111;
+	font-family: 'Montserrat', sans-serif;
+    display: flex;
+    width: 100%;
+}
+.logo-riot{
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-valo{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-riot img{
+    width: 100px;
+}
+.logo-valo img{
+    margin-top: 10px;
+    width: 35px;
+}
+.nav-menu{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-item{
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+nav li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.btn-play-box{
+    width: 27%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btn-play{
+    padding: 10px 30px;
+    background-color: #FF4655;
+    border-radius: 2px;
+}
+nav .btn-hamburger {
+	display: none;
+	position: absolute;
+	right: 1.5em;
+	top: 50%;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	transform: translateY(-50%);
+}
+nav .btn-hamburger span {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background-color: #fff;
+	margin: 6px;
+	border-radius: 2px;
+	transition: .3s ease-in-out;
+}
+nav .btn-hamburger span:nth-child(4),
+nav .btn-hamburger span:nth-child(5) {
+	position: absolute;
+	top: 10px;
+	opacity: .5;
+}
+nav .btn-hamburger span:nth-child(4) {
+	transform: rotate(45deg) scale(0);
+}
+nav .btn-hamburger span:nth-child(5) {
+	transform: rotate(-45deg) scale(0);
+}
+nav.opened .btn-hamburger span:nth-child(4) {
+	opacity: 1;
+	transform: rotate(45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(5) {
+	opacity: 1;
+	transform: rotate(-45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(1),
+nav.opened .btn-hamburger span:nth-child(2),
+nav.opened .btn-hamburger span:nth-child(3) {
+	opacity: 0;
+}
+.home{
+    height: 80vh;
+    width: 100%;
+	background-color: #222;
+	margin-top: 10vh;
+}
+.home-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+.home-container p{
+	color: var(--v-white);
+	margin:20vh 0vw 5vh;
+}
+.logo {
+	fill: #ece8e1;
+	width: 500px;
+	margin-bottom: 7vh;
+}
+:root {
+	--v-red: #ff4655;
+	--v-white: #ece8e1;
+	--v-black: #0f1923;
+	--v-outline: rgba(236, 232, 225, 0.5);
+}
+section button {
+  font-family: "DIN Next LT Pro Bold";
+  font-weight: 400;
+  width: 15%;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  border: 0;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--v-white);
+}
+
+section button:hover {
+  color: var(--v-white);
+}
+
+section button::before,
+section button::after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  position: absolute;
+  height: calc(50% - 0.4rem);
+  width: 100%;
+  border: 1px solid var(--v-outline);
+  left: 0;
+}
+
+section button::before {
+  border-bottom: 0;
+  top: 0;
+}
+
+section button::after {
+  border-top: 0;
+  bottom: 0;
+}
+
+/* LABEL  */
+.label {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--v-red);
+}
+
+.label:before {
+  content: "";
+  height: 100%;
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+/* Hover Effect */
+.hover-effect {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  top: 0;
+  left: -5%;
+  z-index: 1;
+  background-color: var(--v-black);
+  transform: translateX(-100%) skew(-10deg);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+button:hover .hover-effect {
+  transform: translateX(0) skew(-10deg);
+}
+
+/* Label Text */
+.label-text {
+  position: relative;
+  display: block;
+  padding: 16px 10px;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.label-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.6rem;
+  width: 0.6rem;
+  right: 0;
+  bottom: 0;
+  background-color: var(--v-black);
+  transition: background-color 0.2s ease-in;
+}
+button:hover .label-text:after {
+  background-color: var(--v-white);
+}
+#mob-p{
+  display: none;
+}
+.act-3{
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt79884e227405b9c1/6348b3bd003fd824f29f98ec/VALORANT_2022_E5-3_PlayVALORANT_Homepage_3440x1020_MB01_Opt.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.act-3-box{
+  color: white;
+  padding-top: 50vh;
+  margin-left: 5vw;
+
+}
+.top-txt-act-3-box{
+  font-size: 21px;
+}
+.bot-txt-act-3-box{
+  font-size: 140px;
+  font-family: 'Anton', sans-serif;
+}
+.gameplay{
+  height: 100vh;
+  width: 100%;
+  background-color: #ECE8E1;
+}
+.gameplay-head-p{
+  font-size: 156px;
+  font-family: 'Anton', sans-serif;
+  color: #0F1923;
+  padding-top: 7vh;
+  padding-left: 10vw;
+  padding-bottom: 5vh;
+}
+
+.gameplay-container-box iframe{
+  padding-bottom: 20vh;
+}
+
+.download{
+  height: 10vh;
+  background-color: #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download a{
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+}
+.download a:hover{
+  background-color: #393939;
+  border-radius: 10px;
+}
+footer{
+  width: 100%;
+  height: 40vh;
+  background-color: black;
+  color: white;
+}
+.footer-icons{
+  padding-top: 3vh;
+}
+.footer-icons i{
+  background-color: #393939;
+  padding: 8px;
+  border-radius: 10px;
+  margin:5px;
+}
+.logo-icons{
+  margin-top: 5vh;
+}
+.logo-icons img{
+  padding: 0px 10px;
+}
+.log-1{
+  width: 150px;
+}
+.log-2{
+  width: 70px;
+}
+footer p{
+  font-size: 13px;
+  color: #7e7e7e;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.soc-links{
+  margin-top: 3vh;
+  color: #f9f9f9;
+  font-size: 13px;
+}
+.soc-links a{
+  padding: 0px 30px;
+}
+@media screen and (max-width: 768px) {
+	nav .nav-menu {
+		position: fixed;
+		width: 2%;
+    left: 0;
+		top: 10vh;
+		bottom: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		background-color: #1F1F1F;
+		transition: bottom .5s ease-in-out;
+		overflow: hidden;
+	}
+	nav.opened .nav-menu {
+		bottom: 0;
+	}
+	nav .nav-item > a {
+		display: block;
+	}
+	nav .dropdown-menu {
+		position: relative;
+		top: 0;
+		margin: 0 1.5em;
+	}
+	nav .btn-hamburger {
+		display: block;
+	}
+    .logo-riot{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo-valo{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-play-box{
+    display: none;
+    }
+    .logo{
+      width: 350px;
+      margin-top: 10vh;
+      margin-bottom: 0;
+    }
+    #mob-p{
+      margin: 5vh 0vw 40vh;
+      display: block;
+      font-size: 20px;
+    }
+    .home button {
+    width: 80%;
+    }
+    #pc-p{
+      display: none;
+    }
+    .act-3{
+      height: 100vh;
+      width: 100%;
+      background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt79884e227405b9c1/6348b3bd003fd824f29f98ec/VALORANT_2022_E5-3_PlayVALORANT_Homepage_3440x1020_MB01_Opt.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+    .act-3-box{
+      color: white;
+      padding-top: 65vh;
+      margin-left: 5vw;
+    
+    }
+    .top-txt-act-3-box{
+      font-size: 16px;
+    }
+    .bot-txt-act-3-box{
+      font-size: 75px;
+      font-family: 'Anton', sans-serif;
+    }
+    .act-3 button{
+      width: 70%;
+      }
+      .gameplay{
+        height: 80vh;
+      }
+      .gameplay-head-p{
+        font-size: 50px;
+        font-family: 'Anton', sans-serif;
+        color: #0F1923;
+        padding-top: 7vh;
+        padding-left: 10vw;
+        padding-bottom: 5vh;
+      }
+      .gameplay-container-box iframe{
+        width: 350px;
+      }
+      footer{
+        height: 45vh;
+      }
+}
