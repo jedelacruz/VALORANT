@@ -356,7 +356,7 @@ footer p{
 @media screen and (max-width: 768px) {
 	nav .nav-menu {
 		position: fixed;
-		width: 2%;
+		width: 100%;
     left: 0;
 		top: 10vh;
 		bottom: 100%;
@@ -436,7 +436,7 @@ footer p{
       width: 70%;
       }
       .gameplay{
-        height: 80vh;
+        height: 90vh;
       }
       .gameplay-head-p{
         font-size: 50px;
